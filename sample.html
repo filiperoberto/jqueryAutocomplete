@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>SelectToAutocomplete</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src='jquery.selectToAutocomplete.js'></script>
+	<link rel="stylesheet" href="jquery.selectToAutocomplete.css"/>
+	<link rel="stylesheet" href="sample.css"/>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var s1 = $('#select').selectToAutocomplete();	
+			var s2 = $('#select2').selectToAutocomplete();	
+			
+			var messages = $("#messages");
+			$('#form1').submit(function(e){
+				$('<li>').text(this.select.value).appendTo(messages);
+				s1.trigger('clear');
+				return false;
+			});
+			
+			$('#form2').submit(function(e){
+			
+				s2.children(':selected').each(function(){
+					$('<li>').addClass('s2').text(this.value).appendTo(messages);
+				});
+				
+				s2.trigger('clear');
+				return false;
+			})
+		});		
+	</script>
+</head>
+<body>
+	<div class="content">
+		<h1>Select to autocomplete</h1>
+		<form action="" id='form1'>
+			<select name="select" id="select">
+				<option value="brasil">Brasil</option>
+				<option value="italia">Italia</option>
+				<option value="alemanha">Alemanha</option>
+				<option value="EUA">EUA</option>
+				<option value="franca">França</option>
+				<option value="inglaterra">Inglaterra</option>
+				<option value="argentina">Argentina</option>
+				<option value="chile">Chile</option>
+				<option value="equador">Equador</option>
+				<option value="uruguai">Uruguai</option>
+				<option value="afeganistao">Afeganistão</option>
+			</select>
+			<input type="submit" value='Submit'/>
+		</form>
+		<form action="" id='form2'>
+			<select name="select" id="select2" multiple>
+				<option value="brasil" selected>Brasil</option>
+				<option value="italia" selected>Italia</option>
+				<option value="alemanha">Alemanha</option>
+				<option value="EUA">EUA</option>
+				<option value="franca">França</option>
+				<option value="inglaterra">Inglaterra</option>
+				<option value="argentina">Argentina</option>
+				<option value="chile">Chile</option>
+				<option value="equador">Equador</option>
+				<option value="uruguai">Uruguai</option>
+				<option value="afeganistao">Afeganistão</option>
+			</select>
+			<input type="submit" value='Submit'/>
+		</form>
+		<ul id="messages">
+		</ul>		
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,108 @@
+		*
+		{
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			box-sizing: border-box;         /* Opera/IE 8+ */
+		}
+		body
+		{
+			background: rgb(223, 223, 236);
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		}
+		
+		.content
+		{
+			width: 500px;
+			margin: auto;
+			margin-top: 10px;
+			background: white;
+			border-radius: 5px;
+			padding:5px;
+			position:relative;
+		}
+		h1{
+			text-align:center;
+		}
+		ul
+		{
+			width:100%;
+			padding:0;
+		}
+		form{
+			width:100%;
+			text-align:center;
+			margin-top:10px;
+		}
+		textarea{
+			width:100%;
+			resize: none;
+			border:1px solid rgb(200, 200, 200);
+			border-radius:2px;
+			padding:5px;
+		}
+		li
+		{
+			list-style:none;
+			width:100%;
+			padding:10px;
+			border-top: 1px solid rgb(224, 224, 224);
+		}
+		
+		#messages li{
+			text-transform:capitalize;
+		}
+		
+		
+		#messages li:nth-of-type(odd)
+		{
+			background:whitesmoke;
+		}
+		
+		#messages li:before
+		{
+			content:'Select 1:';
+			margin-right: 10px;
+			text-transform: uppercase;
+			font-size: 13px;
+			color: rgb(200, 200, 200);
+		}
+		
+		#messages li.s2:before
+		{
+			content:'Select 2:';
+		}
+		
+		li:last-of-type
+		{
+			border-bottom: 1px solid rgb(224, 224, 224);
+		}
+		
+		input[type=submit],input[type=button]
+		{
+			width: 200px;
+			height: 30px;
+			text-transform: uppercase;
+			background: rgb(113, 190, 113);
+			border: 0;
+			box-shadow: 2px 2px 2px green;
+			border-radius: 2px;
+			color: white;
+			font-weight: bold;
+			cursor: pointer;		
+		}
+		
+		input[type="text"] {
+			text-indent: 5px;
+			height: 30px;
+			font-size: 15px;
+		}
+		
+		h5{
+			font-weight:normal;
+		}
+		.cite {
+			position: absolute;
+			font-size: 11px;
+			top: 0;
+			right: 5px;
+		}
